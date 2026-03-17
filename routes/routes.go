@@ -8,8 +8,6 @@ import (
 
 func SetupRoutes(r *gin.Engine) {
 
-	r.GET("/", controllers.HomePage)
-
 	r.POST("/analyze", controllers.AnalyzeRepo)
 
 	r.GET("/explain-file", controllers.ExplainFile)

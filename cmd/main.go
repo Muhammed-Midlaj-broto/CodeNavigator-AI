@@ -10,7 +10,6 @@ import (
 
 func main() {
 
-	// Set Gin to release mode (better for production)
 	gin.SetMode(gin.ReleaseMode)
 
 	// Create router
@@ -30,10 +29,18 @@ func main() {
 		c.Next()
 	})
 
-	// Setup all routes (includes "/" from routes.go)
+	// ✅ ADD THIS (serve React build)
+	r.Static("/app", "../frontend/build")
+
+	// ✅ ADD THIS (for React routing)
+	r.NoRoute(func(c *gin.Context) {
+		c.File("../frontend/build/index.html")
+	})
+
+	// Setup API routes
 	routes.SetupRoutes(r)
 
-	// Get PORT (important for deployment platforms)
+	// Get PORT
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8081"
