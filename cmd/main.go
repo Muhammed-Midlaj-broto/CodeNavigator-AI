@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	// database.ConnectDB() // Removed DB temporarily
 
 	r := gin.Default()
 
@@ -28,10 +27,17 @@ func main() {
 		c.Next()
 	})
 
+	// ✅ ADD THIS
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "CodeNavigator API is running 🚀",
+		})
+	})
+
 	// ROUTES
 	routes.SetupRoutes(r)
 
-	// Get PORT from environment
+	// PORT
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8081"
