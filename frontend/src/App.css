@@ -1,0 +1,31 @@
+/* Text Selection Color */
+::selection {
+  background: rgba(74, 222, 128, 0.3); /* Light Green transparent */
+  color: #4ade80; /* Light Green text */
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a; /* Keep dark background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+  border: 2px solid #0f172a; /* Adds a little space around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4ade80; /* Turns Green on hover */
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+/* Global Root Variables (Add this at the top of the file) */
+:root {
+  --accent-green: #4ade80;
+  --bg-dark: #0f172a;
+}

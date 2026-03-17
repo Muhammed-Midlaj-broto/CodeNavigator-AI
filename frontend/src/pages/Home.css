@@ -1,0 +1,122 @@
+.home-page {
+  /* Updated to Green radial gradients */
+  background: 
+    radial-gradient(circle at top right, rgba(74, 222, 128, 0.12), transparent),
+    radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.12), transparent),
+    linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)),
+    url("../cn-home.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 100%;
+  max-width: 550px;
+  transition: transform 0.3s ease;
+}
+
+.glass-card h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.glass-card h1 span {
+  color: #4ade80; /* Light Green */
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+.glass-card p {
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.glass-card input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.glass-card input:focus {
+  border-color: #4ade80; /* Light Green border */
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
+}
+
+.glass-card button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #4ade80, #22c55e); /* Green Gradient */
+  border: none;
+  color: #061a0d; /* Darker text for better contrast on green */
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.glass-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(74, 222, 128, 0.4);
+  filter: brightness(1.1);
+}
+
+.logo-glow {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  /* Updated drop-shadow to Green */
+  filter: drop-shadow(0 0 15px rgba(74, 168, 222, 0.6));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.btn-loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+  /* Pulse background updated to green */
+  background: linear-gradient(90deg, #1e293b, #4ade80) !important;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
