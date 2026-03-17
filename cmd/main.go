@@ -10,11 +10,14 @@ import (
 
 func main() {
 
+	// Set Gin to release mode (better for production)
+	gin.SetMode(gin.ReleaseMode)
+
+	// Create router
 	r := gin.Default()
 
-	// CORS
+	// CORS middleware
 	r.Use(func(c *gin.Context) {
-
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
@@ -27,21 +30,18 @@ func main() {
 		c.Next()
 	})
 
-	// ✅ ADD THIS
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "CodeNavigator API is running 🚀",
-		})
-	})
-
-	// ROUTES
+	// Setup all routes (includes "/" from routes.go)
 	routes.SetupRoutes(r)
 
-	// PORT
+	// Get PORT (important for deployment platforms)
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8081"
 	}
 
-	r.Run(":" + port)
+	// Start server
+	err := r.Run(":" + port)
+	if err != nil {
+		panic(err)
+	}
 }
